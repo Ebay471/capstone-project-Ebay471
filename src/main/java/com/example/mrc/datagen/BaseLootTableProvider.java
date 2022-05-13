@@ -1,9 +1,7 @@
 package com.example.mrc.datagen;
 
-import java.lang.System.Logger;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.LogManager;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,14 +15,15 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.DynamicLoot;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.CopyNbtFunction;
 import net.minecraft.world.level.storage.loot.functions.SetContainerContents;
 import net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class BaseLootTableProvider extends LootTableProvider{
+public abstract class BaseLootTableProvider extends LootTableProvider{
 
 		private static final Logger LOGGER = LogManager.getLogger();
 		private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
@@ -41,29 +40,27 @@ public class BaseLootTableProvider extends LootTableProvider{
 		
 		protected LootTable.Builder createStandardTable(String name, Block block, BlockEntityType<?> type){
 			LootPool.Builder builder = LootPool.lootPool()
-			
 			.name(name)
 			.setRolls(ConstantValue.exactly(1))
-			.add(LootItem.lootTableItem(block)) 
+			.add(LootItem.lootTableItem(block)
 			    .apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY))
-			    .apply(CopyNbtFunction.copyData(ContextNbtProvider.BLOCK_ENTITY))
-			    	.copy("Info", "BlockEntityTag.Info", CopyNbtFunction.MergeStrategy.REPLACE)
+			    .apply(CopyNbtFunction.copyData(ContextNbtProvider.BLOCK_ENTITY)
+					.copy("Info", "BlockEntityTag.Info", CopyNbtFunction.MergeStrategy.REPLACE)
 			    	.copy("Inventory", "BlockEntityTag.Inventory", CopyNbtFunction.MergeStrategy.REPLACE)
-			    	.copy("Energy", "BlockEntityTag.Energy", CopyNbtFunction.MergeStrategy.REPLACE)
-						
-				.apply(SetContainerContents.setContents(type))
-						.withEntry(DynamicLoot.dynamicEntry(new ResourceLocation("minecraft", "contents"))
+			    	.copy("Energy", "BlockEntityTag.Energy", CopyNbtFunction.MergeStrategy.REPLACE))
+
+				.apply(SetContainerContents.setContents(type)
+						.withEntry(DynamicLoot.dynamicEntry(new ResourceLocation("minecraft", "contents"))))
 					);
 			    return LootTable.lootTable().withPool(builder);
 			    
 		}
 		
-		protected LootTable.Builder createSingleTable(String name, Block block){
+		protected LootTable.Builder createSimpleTable(String name, Block block){
 			LootPool.Builder builder = LootPool.lootPool()
 				.name(name)
 				.setRolls(ConstantValue.exactly(1))
 				.add(LootItem.lootTableItem(block));
-				return LootTable.lootTable().withPool(builder);
+			return LootTable.lootTable().withPool(builder);
 		}
-		
 }

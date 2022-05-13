@@ -17,7 +17,7 @@ public class ItemTaggss extends ItemTagsProvider{
 	@Override
 	protected void addTags() {
 		tag(Tags.Items.GLASS)
-		.add(Registration.MR_C.get());
+		.add(Registration.MR_C_ITEM.get());
 		//tag(Registration.MR_C_ITEM)
 		//.add(Registration.MR_C_ITEM.get();
 	}
