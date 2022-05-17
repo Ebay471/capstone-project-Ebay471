@@ -19,8 +19,6 @@ public class BlockTaggss extends BlockTagsProvider{
 	protected void addTags() {
 		tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(Registration.MR_C.get());
-		tag(BlockTags.NON_FLAMMABLE_WOOD)
-			.add(Registration.MR_C.get());
 		tag(Tags.Blocks.GLASS)
 			.add(Registration.MR_C.get());
 		

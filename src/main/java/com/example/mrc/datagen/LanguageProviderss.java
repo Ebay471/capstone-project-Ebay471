@@ -16,7 +16,6 @@ public class LanguageProviderss extends LanguageProvider{
 	@Override
 	protected void addTranslations() {
 		add("itemGroup." + TAB_NAME, "MrC");
-		
 		add(Registration.MR_C.get(), "Mr. C");
 	}
 }

@@ -13,7 +13,8 @@ public class ItemTaggss extends ItemTagsProvider{
 	public ItemTaggss(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper helper) {
 		super(generator,blockTags, MrC.MODID, helper);
 	}
-	
+
+
 	@Override
 	protected void addTags() {
 		tag(Tags.Items.GLASS)
