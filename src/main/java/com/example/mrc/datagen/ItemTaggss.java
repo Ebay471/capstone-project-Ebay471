@@ -17,10 +17,11 @@ public class ItemTaggss extends ItemTagsProvider{
 
 	@Override
 	protected void addTags() {
-		tag(Tags.Items.GLASS)
+		tag(Tags.Items.ORES)
 		.add(Registration.MR_C_ITEM.get());
-		//tag(Registration.MR_C_ITEM)
-		//.add(Registration.MR_C_ITEM.get();
+
+		tag(Registration.MR_C_ITEM)
+		.add(Registration.MR_C_ITEM.get());
 	}
 	
 	@Override

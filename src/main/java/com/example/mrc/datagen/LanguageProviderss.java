@@ -17,5 +17,8 @@ public class LanguageProviderss extends LanguageProvider{
 	protected void addTranslations() {
 		add("itemGroup." + TAB_NAME, "MrC");
 		add(Registration.MR_C.get(), "Mr. C");
+
+		add(Registration.RAW_MR_C_CHUNK.get(), "Mr. Chunk");
+		add(Registration.MR_C_INGOT.get(), "Mr. Cingot");
 	}
 }

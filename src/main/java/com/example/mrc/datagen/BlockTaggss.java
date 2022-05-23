@@ -17,15 +17,15 @@ public class BlockTaggss extends BlockTagsProvider{
 	
 	@Override
 	protected void addTags() {
-		tag(BlockTags.MINEABLE_WITH_AXE)
+		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.add(Registration.MR_C.get());
-		tag(Tags.Blocks.GLASS)
+		tag(Tags.Blocks.ORES)
 			.add(Registration.MR_C.get());
 		
-		//tag(Registration.MR_C)
-		//.add(Registration.MR_C.get();
+		tag(Registration.MR_C)
+		.add(Registration.MR_C.get());
 	}
-	
+
 	@Override
 	public String getName() {
 		return "Mr C";

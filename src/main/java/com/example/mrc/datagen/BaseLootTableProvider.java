@@ -1,4 +1,5 @@
 package com.example.mrc.datagen;
+import com.example.mrc.setup.Registration;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -111,6 +112,9 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 				LOGGER.error("Couldn't write loot table {}", path, e);
 			}
 		});
+
+		lootTables.put(Registration.MR_C.get(), createSilkTouchTable("mr_c", Registration.MR_C.get(), Registration.RAW_MR_C_CHUNK.get(), 1, 3));
+
 	}
 
 	@Override
