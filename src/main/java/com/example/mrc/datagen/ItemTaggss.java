@@ -20,7 +20,7 @@ public class ItemTaggss extends ItemTagsProvider{
 		tag(Tags.Items.ORES)
 		.add(Registration.MR_C_ITEM.get());
 
-		tag(Registration.MR_C_ITEM)
+		tag(Registration.MR_C_ORE_ITEM)
 		.add(Registration.MR_C_ITEM.get());
 	}
 	

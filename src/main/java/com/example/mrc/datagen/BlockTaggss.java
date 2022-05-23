@@ -22,7 +22,7 @@ public class BlockTaggss extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES)
 			.add(Registration.MR_C.get());
 		
-		tag(Registration.MR_C)
+		tag(Registration.MR_C_ORE)
 		.add(Registration.MR_C.get());
 	}
 

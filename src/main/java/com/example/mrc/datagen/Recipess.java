@@ -15,9 +15,9 @@ public class Recipess extends RecipeProvider{
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(Registration.MR_C_ITEM),
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(Registration.MR_C_ORE_ITEM),
 						Registration.MR_C_INGOT.get(), 1.0f, 100)
-				.unlockedBy("has_ore", has(Registration.MR_C_ITEM))
+				.unlockedBy("has_ore", has(Registration.MR_C_ORE_ITEM))
 				.save(consumer, "mysterious_ingot1");
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(Registration.RAW_MR_C_CHUNK.get()),
 						Registration.MR_C_INGOT.get(), 0.0f, 100)
