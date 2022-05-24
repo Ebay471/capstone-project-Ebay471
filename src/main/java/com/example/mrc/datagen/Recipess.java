@@ -18,10 +18,10 @@ public class Recipess extends RecipeProvider{
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(Registration.MR_C_ORE_ITEM),
 						Registration.MR_C_INGOT.get(), 1.0f, 100)
 				.unlockedBy("has_ore", has(Registration.MR_C_ORE_ITEM))
-				.save(consumer, "mysterious_ingot1");
+				.save(consumer, "mr_c_ingot");
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(Registration.RAW_MR_C_CHUNK.get()),
 						Registration.MR_C_INGOT.get(), 0.0f, 100)
 				.unlockedBy("has_chunk", has(Registration.RAW_MR_C_CHUNK.get()))
-				.save(consumer, "mysterious_ingot2");
+				.save(consumer, "raw_mr_c_chunk");
 	}
 }

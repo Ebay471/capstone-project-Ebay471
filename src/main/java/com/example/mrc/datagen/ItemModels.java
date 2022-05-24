@@ -20,9 +20,9 @@ public class ItemModels extends ItemModelProvider{
 
 		singleTexture(Registration.RAW_MR_C_CHUNK.get().getRegistryName().getPath(),
 			mcLoc("item/generated"),
-			"layer0", modLoc("item/raw_mysterious_chunk"));
+			"layer0", modLoc("item/raw_mr_c_chunk"));
 		singleTexture(Registration.MR_C_INGOT.get().getRegistryName().getPath(),
 			mcLoc("item/generated"),
-			"layer0", modLoc("item/mysterious_ingot"));
+			"layer0", modLoc("item/mr_c_ingot"));
 	}
 }
